@@ -6,7 +6,7 @@ Simon Gabay, simon.gabay[at]unige.ch
 
 ### Site
 
-<a href="https://maperformance.github.io" target="_blank">maperformance.github.io</a>
+<a href="https://maperformance.github.io" target="_blank">https://maperformance.github.io</a>
 
 ### Data
 

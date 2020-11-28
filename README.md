@@ -4,9 +4,13 @@ _Middle Ages & Performances_
 
 Simon Gabay, simon.gabay[at]unige.ch
 
+### Site
+
+https://maperformance.github.io/
+
 ### Data
 
-You will find here the data and the script to create the map
+You will find here the data and the script to create the map.
 
 ### Licence
 

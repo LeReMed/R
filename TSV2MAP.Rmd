@@ -70,17 +70,12 @@ addProviderTiles(providers$Esri.NatGeoWorldMap)%>%
   addCircleMarkers(lng = MAP$lng, 
                    lat = MAP$lat,
                    popup=MAP$URL
-                   #popup = paste(sep="",
-                   #             "<i>",
-                   #              MAP$title,"</i>, ",
-                   #               MAP$place,
-                   #              " [<a href='",MAP$URL,"' target=\"_blank\">Voir la fiche</a>]"
-                   #              )
                    )%>%
 
 addLegend("topright", 
-              colors = c("trasparent"),
-              labels=c("Simon Gabay - simon.gabay@unige.ch"),
+              colors = c("trasparent","trasparent"),
+              labels=c("Contact: <a href='mailto:simon.gabay@unige.ch' target='_blank'>simon.gabay@unige.ch</a>",
+                       "Code source: <a href='https://github.com/MAPerformance' target='_blank'>https://github.com/MAPerformance</a>"),
               title="MAP - Middle Ages & Performances")
 saveWidget(map, file="index.html")
 ```

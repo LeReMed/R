@@ -26,6 +26,10 @@ if(!require("htmlwidgets")){
   install.packages("htmlwidgets")
   library(htmlwidgets)
 }
+if(!require("htmltools")){
+  install.packages("htmltools")
+  library(htmltools)
+}
 knitr::opts_chunk$set(echo = TRUE, fig.width=20)
 ```
 
@@ -61,12 +65,20 @@ Map it!
 ```{r}
 map<-leaflet()%>%
 ## On ajoute un fond de carte
-addProviderTiles(providers$Esri.NatGeoWorldMap)%>% 
+addProviderTiles(providers$Esri.NatGeoWorldMap)%>%
+  addMiniMap(
+    tiles = providers$Esri.WorldStreetMap,
+    toggleDisplay = TRUE)%>%
   
   # Je définis le point central de ma carte
   setView(lng = 2, 
           lat = 47, 
           zoom = 6 )%>%
+
+  
+  addEasyButton(easyButton(
+    icon="fa-globe", title="Zoom to Level 1",
+    onClick=JS("function(btn, map){ map.setZoom(6); }"))) %>%
   
   # J'ajoute les points issues des pièces siècle par siècle
  addCircleMarkers(data = MAP12, 

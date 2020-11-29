@@ -50,6 +50,7 @@ df <- data.frame(title=MAP$title,
                  place=MAP$place,
                  lat=MAP$lat,
                  long=MAP$lng,
+                 color=MAP$color,
                  URL=MAP$URL)
 #df
 ```
@@ -69,7 +70,8 @@ addProviderTiles(providers$Esri.NatGeoWorldMap)%>%
   # J'ajoute les points issues des pièces de Boyer
   addCircleMarkers(lng = MAP$lng, 
                    lat = MAP$lat,
-                   popup=MAP$URL
+                   color = MAP$color,
+                   popup=MAP$list
                    )%>%
 
 addLegend("topright", 

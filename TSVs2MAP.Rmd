@@ -1,5 +1,5 @@
 ---
-title: "MAP Project"
+title: "LeReMed Project"
 author: "Simon Gabay"
 date: "`r Sys.Date()`"
 output:
@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=20)
 Set your working directory
 
 ```{r, results='hide'}
-setwd("~/GitHub/MAP/MAP_R")
+setwd("~/MAP/MAP_R")
 ```
 
 Load your data
@@ -152,10 +152,11 @@ addProviderTiles(providers$Esri.NatGeoWorldMap)%>%
   
   
 addLegend("topright", 
-              colors = c("trasparent","trasparent"),
+              colors = c("trasparent","trasparent", "transparent"),
               labels=c("Contact: <a href='mailto:simon.gabay@unige.ch' target='_blank'>simon.gabay@unige.ch</a>",
-                       "Code source: <a href='https://github.com/MAPerformance' target='_blank'>https://github.com/MAPerformance</a>"),
-              title="MAP - Middle Ages & Performances") %>%
+                       "Code source: <a href='https://github.com/LeReMed' target='_blank'>https://github.com/LeReMed</a>",
+                       "<a href='https://leremed.huma-num.fr' target='_blank'>Retour à l'application web</a>"),
+              title="LeReMed - Les Représentations Médiévales") %>%
 
   addLayersControl(overlayGroups = c("XIIIeme",
                                      "XIVeme",
@@ -164,6 +165,6 @@ addLegend("topright",
                                      "XVIIeme"),
                    options = layersControlOptions(collapsed = FALSE)
   )
-saveWidget(map, file="index.html")
+saveWidget(map, file="map.html")
 ```
 ```
